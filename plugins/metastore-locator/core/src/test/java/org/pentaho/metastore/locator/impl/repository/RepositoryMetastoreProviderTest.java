@@ -24,6 +24,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.pentaho.di.repository.Repository;
 import org.pentaho.kettle.repository.locator.api.KettleRepositoryLocator;
 import org.pentaho.metastore.api.IMetaStore;
+import org.pentaho.metastore.api.exceptions.MetaStoreException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
