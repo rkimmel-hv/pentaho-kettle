@@ -759,7 +759,7 @@ public interface Repository {
    * @return the Metastore that is implemented in this Repository. Return null if this repository doesn't implement a
    *         Metastore.
    */
-  public IMetaStore getMetaStore();
+  public IMetaStore getRepositoryMetaStore();
 
   /**
    * @return repository for connect to server

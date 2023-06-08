@@ -327,7 +327,7 @@ public class RepositoryExporter implements IRepositoryExporterFeedback {
           JobEntryTrans trans = (JobEntryTrans) entry;
           if ( trans.getSpecificationMethod() == ObjectLocationSpecificationMethod.FILENAME ) {
             try {
-              TransMeta meta = trans.getTransMeta( repository, repository.getMetaStore(), jobMeta );
+              TransMeta meta = trans.getTransMeta( repository, repository.getRepositoryMetaStore(), jobMeta );
               FileObject fileObject = KettleVFS.getFileObject( meta.getFilename() );
               trans.setSpecificationMethod( ObjectLocationSpecificationMethod.REPOSITORY_BY_NAME );
               trans.setFileName( null );
@@ -346,7 +346,7 @@ public class RepositoryExporter implements IRepositoryExporterFeedback {
           JobEntryJob jobEntryJob = (JobEntryJob) entry;
           if ( jobEntryJob.getSpecificationMethod() == ObjectLocationSpecificationMethod.FILENAME ) {
             try {
-              JobMeta meta = jobEntryJob.getJobMeta( repository, repository.getMetaStore(), jobMeta );
+              JobMeta meta = jobEntryJob.getJobMeta( repository, repository.getRepositoryMetaStore(), jobMeta );
               FileObject fileObject = KettleVFS.getFileObject( meta.getFilename() );
               jobEntryJob.setSpecificationMethod( ObjectLocationSpecificationMethod.REPOSITORY_BY_NAME );
               jobEntryJob.setFileName( null );

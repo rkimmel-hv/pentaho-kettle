@@ -697,7 +697,7 @@ public class Job extends Thread implements VariableSpace, NamedParams, HasLogCha
       ( (VariableSpace) cloneJei ).copyVariablesFrom( this );
       cloneJei.setRepository( rep );
       if ( rep != null ) {
-        cloneJei.setMetaStore( rep.getMetaStore() );
+        cloneJei.setMetaStore( rep.getRepositoryMetaStore() );
       }
       cloneJei.setParentJob( this );
       cloneJei.setParentJobMeta( this.getJobMeta() );
