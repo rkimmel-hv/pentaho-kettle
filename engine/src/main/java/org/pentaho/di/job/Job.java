@@ -95,6 +95,7 @@ import org.pentaho.di.job.entries.special.JobEntrySpecial;
 import org.pentaho.di.job.entries.trans.JobEntryTrans;
 import org.pentaho.di.job.entry.JobEntryCopy;
 import org.pentaho.di.job.entry.JobEntryInterface;
+import org.pentaho.di.metastore.MetaStoreConst;
 import org.pentaho.di.repository.ObjectId;
 import org.pentaho.di.repository.ObjectRevision;
 import org.pentaho.di.repository.Repository;
@@ -697,7 +698,7 @@ public class Job extends Thread implements VariableSpace, NamedParams, HasLogCha
       ( (VariableSpace) cloneJei ).copyVariablesFrom( this );
       cloneJei.setRepository( rep );
       if ( rep != null ) {
-        cloneJei.setMetaStore( rep.getRepositoryMetaStore() );
+        cloneJei.setMetaStore( MetaStoreConst.getDefaultMetastore() );
       }
       cloneJei.setParentJob( this );
       cloneJei.setParentJobMeta( this.getJobMeta() );
